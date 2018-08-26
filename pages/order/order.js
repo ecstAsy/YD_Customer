@@ -165,9 +165,9 @@ Page({
       if (navId == 0) {
         Data = dataArry;
       } else {
-        let list = dataArry.find(list => list.orderStatus === Menus[navId]);
+        let list = dataArry.filter(list => list.orderStatus === Menus[navId]);
         if (list){
-          Data = [...Data, list]
+          Data = [...Data, ...list]
         }
       }
     }

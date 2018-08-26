@@ -9,9 +9,9 @@
     <text>预约信息</text>
   </view>
   <view class='info_list' style='margin-top:23rpx;margin-bottom:20rpx;'
-        wx:if="{{orderInfo.serverType==='年检服务'}}">
+        wx:if="{{orderInfo.serverType==='年检'}}">
     <image src='/images/store/position.png'/>
-    <text class='address'>{{orderInfo.address}}</text>
+    <text class='address'>{{orderInfo.customerAddress}}</text>
   </view>
   <block wx:for="{{orderDetail}}" wx:key="{{info.id}}" wx:for-item="info">
     <view class='info_list'>

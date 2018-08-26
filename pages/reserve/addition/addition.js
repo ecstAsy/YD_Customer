@@ -12,7 +12,7 @@ const _CarInfo = (carInfo) => {
       userCar.carPlate = carInfo[carInfo.length - 1].plate;
     }
     if (carInfo[carInfo.length - 1].firstRegisterDate){
-      userCar.firstRegisterDate = carInfo[carInfo.length - 1].firstRegisterDate;
+      userCar.firstRegisterDate = carInfo[carInfo.length - 1].firstRegisterDate.substring(0, 4) + "-" + carInfo[carInfo.length - 1].firstRegisterDate.substring(4, 6) + "-" + carInfo[carInfo.length - 1].firstRegisterDate.substring(6, 8);
     }
   }
   return userCar
