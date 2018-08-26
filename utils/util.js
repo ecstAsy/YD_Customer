@@ -13,6 +13,14 @@ const formatNumber = n => {
   return n[1] ? n : '0' + n
 }
 
+const formatTime_1 = date => {
+  if (date && date.length > 7) {
+    return date.substring(0, 4) + "-" + date.substring(4, 6) + "-" + date.substring(6, 8)
+  }
+  return date
+}
+
 module.exports = {
-  formatTime: formatTime
+  formatTime: formatTime,
+  formatTime_1: formatTime_1
 }
