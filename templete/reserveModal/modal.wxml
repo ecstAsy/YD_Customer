@@ -1,0 +1,19 @@
+<template name="Modal">
+  <view class="modal-mask" catchtouchmove="preventTouchMove" wx:if="{{showModal}}"></view>
+<view class="modal-dialog" wx:if="{{showModal}}">
+  <view class="modal-title">预约成功</view>
+  <view class="modal-content">
+    <view class='Modal_info' wx:if="{{useCarTime<=60000}}">
+      请提前与检测站电话沟通，带齐相关资料按约定时间开车前往。
+    </view>  
+    <view class='Modal_info' wx:if="{{useCarTime>60000}}">
+      <text>可采用以下两种方式进行年检</text>
+      <text>1.顺丰快递将相关资料快递到检测站进行年检，快递前与检测站电话沟通细节。</text>
+      <text>2.到站检测。</text>
+    </view>  
+  </view>
+  <view class="modal-footer">
+    <button class="btn-confirm" bindtap="onConfirm">确定</button>
+  </view>
+</view>
+</template>

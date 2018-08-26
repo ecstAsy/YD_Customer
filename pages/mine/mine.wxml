@@ -1,0 +1,29 @@
+	<import src="../../templete/info/info.wxml" />
+  <template is="info" data="{{showModal}}"/>
+<view class='userInfo' 
+      style='height:{{systemInfo.Height*0.09}}px'>
+  <view class='userInfo_Avatar' 
+        style='width:{{systemInfo.Height*0.09}}px;height:{{systemInfo.Height*0.09}}px'>
+     <open-data type="userAvatarUrl"></open-data> 
+  </view>
+  <view class='userInfo_about' 
+        style='line-height:{{systemInfo.Height*0.045}}px'>
+    <open-data type="userNickName"></open-data>
+    <view>
+       <text>手机号：</text><text>{{phone}}</text>
+    </view>
+  </view>
+</view>
+
+<view class='carInfo' 
+      style='height:{{systemInfo.Height*0.08}}px;line-height:{{systemInfo.Height*0.08}}px'>
+   <text class='title'>车辆信息</text>
+   <text class='detail'>{{carPlate}}</text>
+</view>
+
+<view class='serviceComplaint' bindtap='toComplaint'
+      style='height:{{systemInfo.Height*0.08}}px;line-height:{{systemInfo.Height*0.08}}px'>
+   <text class='title'>服务投诉</text>
+   <image  class="add_icon" style='height:{{systemInfo.Height*0.08*0.3}}px;width:{{systemInfo.Height*0.08*0.3}}px;margin-top:{{systemInfo.Height*0.08*0.35}}px' src='/images/addition/right.png' />
+</view>
+

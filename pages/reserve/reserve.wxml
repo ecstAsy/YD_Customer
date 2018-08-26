@@ -1,0 +1,22 @@
+<import src="../../templete/loading/loading.wxml" />
+<import src="../../templete/info/info.wxml" />
+<view class="reserve" wx:if="{{!Loading}}" style='height:{{systemInfo.Height}}px'>
+  <view class='reserve_list' style='height:{{systemInfo.Height*0.14}}px' wx:for="{{Reserve}}" wx:key="key" wx:for-item="car" data-id="{{car.id}}" bindtap='selectReserve'>
+      <view class='reserve_list_icon' style='width:{{systemInfo.Height*0.14*0.56}}px;height:{{systemInfo.Height*0.14*0.56}}px'>
+         <image src='{{car.img}}'/>
+     </view>
+     <view class='reserve_list_title' style='line-height:{{systemInfo.Height*0.14}}px'>{{car.title}}</view>
+  </view>
+   <navigator class='reserve_list navigator' target="miniProgram"
+              open-type="navigate" app-id="wxf6bbf57e74e8b333" path="" 
+              extra-data="" version="release"
+              style='line-height:{{systemInfo.Height*0.14}}px'>
+      <view class='reserve_list_icon' style='width:{{systemInfo.Height*0.14*0.56}}px;height:{{systemInfo.Height*0.14*0.56}}px'>
+         <image src='/images/reserve/maintain.png'/>    
+     </view>
+     <view class='reserve_list_title' style='line-height:{{systemInfo.Height*0.14}}px'>我要保养</view>
+   </navigator>
+</view>
+<template is="loading" data="{{Loading}}" />
+<template is="info" data="{{showModal}}"/>
+<view class='phoneToast'>官方客服电话 0512-85185000</view>

@@ -1,0 +1,42 @@
+<import src="../../templete/card/card.wxml" />
+<import src="../../templete/info/info.wxml" />
+<import src="../../templete/cardModal/modal.wxml" />
+<import src="../../templete/phoneModal/modal.wxml" />
+<!-- 添加卡券 -->
+<view class='getCard_box'>
+<view class='getCard' bindtap='drawCard' wx:if="{{!Loading}}">
+  <image src='/images/card/add.png' />
+  <text>添加卡券</text>
+</view>
+</view>
+
+
+<!-- 卡券列表 -->
+<view class='card' wx:if="{{!Loading}}">
+  <block wx:for="{{cardLists}}" wx:for-item="card" wx:key="index">
+    <template is="card" data="{{card,code:1}}" />
+  </block>
+</view>
+<!-- loading动画 -->
+<view class="loading_box" wx:if="{{Loading}}">
+  <view class="loading3 loading3_1"></view>
+  <view class="loading3 loading3_2"></view>
+  <view class="loading3 loading3_3"></view>
+</view>
+<!-- 卡券领取 -->
+<view class='drawBox ' wx:if='{{cardModalShow}}' 
+      animation="{{animationData}}" catchtouchmove="move">
+  <template is="addCardModal" data="{{cardTest}}"/>  
+</view>  
+<!-- 手机号验证 -->
+<view class='drawBox ' wx:if='{{PhoneModalShow}}' 
+      animation="{{phoneAnimationData}}" catchtouchmove="move">
+  <template is="phoneModal" 
+            data="{{countdown,isClickCodeBtn,btnTxt,phoneTest}}"/>  
+</view>
+
+<view class='order_null' wx:if="{{cardLists.length==0&&!Loading}}">
+   暂无卡券
+</view> 
+
+<template is="info" data="{{showModal}}"/>

@@ -1,0 +1,15 @@
+<template name="card">
+  <view class='card_list' bindtap='{{code==2?"selectCard":""}}' data-id="{{card.id}}">
+       <view class='card_list_name {{card.cardStatus!="未使用"?"active":""}}'>{{card.cardName}}</view>
+       <!-- <view class='card_list_carnum {{card.cardStatus!="未使用"?"active":""}}'>卡号：{{card.id}}</view> -->
+       <view class='card_list_time {{card.cardStatus!="未使用"?"active":""}}'>有效期：
+          <text class='card_list_time_text {{card.cardStatus!="未使用"?"active":""}}'>{{card.periodBeginDate}} - {{card.periodEndDate}}</text> 
+       </view>
+       <view class='card_list_toast {{card.cardStatus!="未使用"?"active":""}}'>小程序内预约下单使用、在线预约专享</view>
+       <view class='card_list_circle left'></view>
+       <view class='card_list_circle right'></view>
+       <image wx:if="{{code==2&&!card.checked}}" class='choose_icon' src='/images/card/select.png'/>
+       <image wx:if="{{code==2&&card.checked}}" class='choose_icon' src='/images/card/selected.png'/>
+       <button class='card_list_status {{card.cardStatus!="未使用"?"active":""}}' wx:if="{{code==1}}">{{card.cardStatus}}</button>
+    </view>
+</template>

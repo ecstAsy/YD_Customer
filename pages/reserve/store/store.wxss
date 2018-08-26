@@ -1,0 +1,177 @@
+@import "../../../templete/loading/loading.wxss";
+
+page {
+  background: #f5f5f5;
+  border-top: 1rpx solid #e2e4e8;
+}
+
+.canUseCard {
+  width: 100%;
+  height: 298rpx;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 99;
+  padding: 18rpx 0 12rpx;
+  background: #f5f5f5;
+}
+
+.swiper, .swiperItem {
+  width: 100%;
+  height: 100%;
+}
+
+.canUseCard-list {
+  width: 93%;
+  height: 280rpx;
+  position: relative;
+  z-index: 999;
+  margin: 0 auto;
+  box-shadow: 0rpx 14rpx 18rpx rgba(96, 188, 253, 0.37);
+}
+
+.canUseCard-list image {
+  width: 100%;
+  height: 100%;
+  vertical-align: bottom;
+}
+
+.canUseCard-list .txt {
+  display: block;
+  position: absolute;
+  color: #e8effd;
+}
+
+ .canUseCard-list image:last-of-type {
+  position: absolute;
+  width: 133rpx;
+  height: 133rpx;
+  top: 42rpx;
+  right: 42rpx;
+} 
+
+.canUseCard-list .txt:first-of-type {
+  font-size: 29rpx;
+  left: 60rpx;
+  top: 60rpx;
+}
+
+.canUseCard-list .txt:nth-of-type(2) {
+  font-size: 26rpx;
+  left: 60rpx;
+  top: 110rpx;
+}
+
+.canUseCard-list .txt:last-of-type {
+  font-size: 20rpx;
+  bottom: 24rpx;
+  right: 42rpx;
+}
+
+.store_intro_toast{
+  padding-left: 27rpx;
+  font-size: 29rpx;
+  color: #939ba4;
+  padding-bottom: 18rpx;
+  padding-top: 30rpx;
+  background: #f5f5f5;
+}
+.store_list {
+  width: 100%;
+  height: 160rpx;
+  background: #fff;
+  margin-top: 18rpx;
+  padding: 35rpx 0;
+  position: relative;
+}
+
+.store_list_img {
+  width: 160rpx;
+  height: 160rpx;
+  border-radius: 6rpx;
+  margin: 0 27rpx;
+  display: inline-block;
+  vertical-align: top;
+}
+
+.store_list_img image {
+  width: 100%;
+  height: 100%;
+  border-radius: 6rpx;
+}
+
+.store_list_img view {
+  width: 100%;
+  height: 100%;
+  border-radius: 6rpx;
+  color: #939ba4;
+  background: #edf0f4;
+  font-size: 20rpx;
+  line-height: 145rpx;
+  text-align: center;
+}
+
+.store_list_info {
+  display: inline-block;
+  position: relative;
+  vertical-align: middle;
+  margin-left: 20rpx;
+}
+
+.store_list_info_name {
+  font-size: 32rpx;
+  color: #333;
+  font-family: "PingFang-SC-Bold";
+  height: 48rpx;
+  font-weight: 600;
+}
+
+.store_list_info_name text {
+  font-size: 25rpx;
+}
+
+.store_list_info_time, 
+.store_list_info_address,
+.store_list_info_linkman {
+  font-size: 28rpx;
+  color: #939ba4;
+  height: 36rpx;
+  font-family: "PingFang-SC-Regular";
+}
+
+.store_list_info_address image,.store_list_info_time image {
+  width: 28rpx;
+  height: 28rpx;
+  vertical-align: middle;
+}
+.store_list_info_address text,.store_list_info_time text{
+  display: inline-block;
+  vertical-align: middle;
+}
+.store_list_info_linkman_phone{
+  display: inline-block;
+  color: #0082FE;
+  margin-left: 34rpx;
+  margin-top: 10rpx;
+  margin-bottom: 10rpx;
+}
+
+.store_list_info_time {
+  margin-bottom: 10rpx;
+  margin-top: 10rpx;
+}
+
+.store_list_distance {
+  position: absolute;
+  height: 145rpx;
+  line-height: 145rpx;
+  right: 60rpx;
+  top: 33rpx;
+  color: #ff8b00;
+  font-size: 22rpx;
+  font-family: "PingFang-SC-Regular";
+}
+ .canvas-box{
+   position: fixed; 
+   top: -999rpx; 
+} 

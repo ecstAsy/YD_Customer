@@ -1,0 +1,56 @@
+{
+  "pages": [
+   
+    "pages/reserve/reserve",
+    "pages/reserve/store/store",
+    "pages/reserve/addition/addition",
+    "pages/reserve/usecard/usecard",
+    "pages/reserve/detail/detail",
+    "pages/reserve/filladdress/filladdress",
+    "pages/order/order",
+    "pages/order/list/list",
+    "pages/card/card",
+    "pages/mine/mine",
+    "pages/mine/complaint/complaint"
+    
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": ""
+    
+  },
+  "tabBar": {
+    "color": "#939ba4",
+    "selectedColor": "#ff8b00",
+    "borderStyle": "black",
+    "backgroundColor": "#fff",
+    "list": [
+      {
+        "pagePath": "pages/reserve/reserve",
+        "text": "预约",
+        "iconPath": "images/tab/reserve_a.png",
+        "selectedIconPath": "images/tab/reserve_b.png"
+      },
+      {
+        "pagePath": "pages/order/order",
+        "text": "订单",
+        "iconPath": "images/tab/order_a.png",
+        "selectedIconPath": "images/tab/order_b.png"
+      },
+      {
+        "pagePath": "pages/card/card",
+        "text": "卡券",
+        "iconPath": "images/tab/card_a.png",
+        "selectedIconPath": "images/tab/card_b.png"
+      },
+      {
+        "pagePath": "pages/mine/mine",
+        "text": "我的",
+        "iconPath": "images/tab/mine_a.png",
+        "selectedIconPath": "images/tab/mine_b.png"
+      }
+    ]
+  }
+}

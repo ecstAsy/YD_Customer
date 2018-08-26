@@ -1,0 +1,105 @@
+.card_list{
+  width: 93%;
+  margin: 18rpx auto;
+  background: #fff;
+  border-radius: 6rpx;
+  padding-top: 19rpx;
+  position: relative;
+  box-shadow: 0rpx 10rpx 12rpx rgba(221,221,221,.37);
+}
+.card_list_name,.card_list_carnum,.card_list_time{
+  margin-left: 28rpx;
+}
+.card_list_name{
+  font-size: 29rpx;
+  color: #333;
+  font-family: "PingFang-SC-Bold";
+  margin-bottom: 16rpx;
+  font-weight: 500;
+}
+.card_list_name.active{
+  color: #cbd6e1;
+}
+.card_list_carnum,.card_list_time{
+  font-size: 26rpx;
+  color: #939ba4;
+}
+.card_list_carnum.active,.card_list_time.active{
+  color: #cbd6e1;
+}
+.card_list_time{
+  margin-top: 12rpx;
+  margin-bottom: 20rpx;
+}
+.card_list_time_text{
+  color: #333;
+}
+.card_list_time_text.active{
+  color: #cbd6e1;
+}
+.card_list_toast{
+  height: 48rpx;
+  line-height: 48rpx;
+  text-indent: 29rpx;
+  font-size: 20rpx;
+  color: #bdc7d2;
+  background: #fafafa;
+  border-top: 1rpx dashed #e2e4e8;
+}
+.card_list_toast.active{
+  color: #cbd6e1;
+}
+.card_list_circle{
+  width: 28rpx;
+  height: 28rpx;
+  background: #f5f5f5;
+  position: absolute;
+  bottom: 34rpx;  
+  border-radius: 50%;
+}
+.left{
+  left: -14rpx;
+}
+.right{
+  right: -14rpx;
+}
+.card_list_status{
+  padding: 0;
+  position: absolute;
+  right: 48rpx;
+  top: 60rpx;
+  width: 132rpx;
+  height: 42rpx;
+  line-height: 44rpx;
+  font-size: 24rpx;
+  border: none;
+  outline: medium;
+  color: #fff;
+  border-top-left-radius: 0rpx;
+  border-bottom-left-radius: 21rpx;
+  border-top-right-radius: 21rpx;
+  border-bottom-right-radius: 21rpx;
+  background: linear-gradient(to right,#ff8b00 0,#f6be1a 100%);
+  box-shadow: 0rpx 10rpx 12rpx rgba(255,170,87,.35);
+}
+.card_list_status::after{
+  border: none;
+  outline: medium;
+  border-top-left-radius: 0rpx;
+  border-bottom-left-radius: 21rpx;
+  border-top-right-radius: 21rpx;
+  border-bottom-right-radius: 21rpx;
+}
+.card_list_status.active{
+  color: #cbd6e1;
+  background: #fff;
+  border: 2rpx solid #cbd6e1;
+  box-shadow: 0rpx 0rpx 0rpx rgba(0,0,0,0);
+}
+.choose_icon{
+  width: 56rpx;
+  height: 56rpx;
+  position: absolute;
+  top: 60rpx;
+  right: 54rpx;
+}

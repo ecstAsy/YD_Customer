@@ -1,0 +1,57 @@
+<import src="../../../templete/loading/loading.wxml" />
+<view class="store" wx:if="{{!Loading}}">
+  <view class='canUseCard' wx:if="{{serveType === '洗车'}}">
+    <swiper class='swiper' autoplay circular>
+      <block wx:for="{{[0]}}" wx:key="index">
+        <swiper-item class='swiperItem'>
+          <view class='canUseCard-list'>
+            <image class='canUseCard-list-bg' src='/images/store/carbg.png' />
+            <text class='txt'>您还有 <text style='color:#fff;font-size:32rpx;font-weight: 500;'>{{validNum}}</text> 张洗车券</text>
+            <text class='txt'>当前可用 <text style='color:#fff;font-size:32rpx;font-weight: 500;'>{{userCardSum}}</text> 张</text>
+            <text class='txt'>向商家出示此二维码进行消费</text>
+            <image src='{{imagePath}}' bindtap='previewImg'/>
+          </view>
+        </swiper-item>
+      </block>
+    </swiper>
+    <view class='store_intro_toast'>以下门店可使用</view>
+  </view>
+  <view style='height:390rpx;' wx:if="{{serveType === '洗车'}}"></view>
+  
+  <block wx:for="{{Store}}" wx:for-item="list" wx:key="index">
+    <view class='store_list' bindtap='storeDetail' data-id="{{index}}" data-name="{{list.name}}">
+      <view class='store_list_img'>
+        <image wx:if="{{list.img1}}" src='{{list.img1}}' />
+        <view wx:if="{{!list.img1}}">
+          未上传图片
+        </view>
+      </view>
+      <view class='store_list_info'>
+        <view class='store_list_info_name'>{{list.name}}</view>
+        <view class='store_list_info_linkman'>
+           <text class='store_list_info_linkman_name'>{{list.linkMan}}</text>
+           <text class='store_list_info_linkman_phone' 
+                 data-id="{{list.phone1}}" catchtap='callWorker'>{{list.phone1}}</text>
+        </view>
+        <view class='store_list_info_time'>
+          <image src='/images/store/time.png' /> 
+          <text> {{list.beginTime}}~{{list.endTime}} </text>
+        </view>
+        <view class='store_list_info_address' catchtap='showMap' data-id="{{index}}">
+          <image src='/images/store/position.png' />
+          <text> {{list.address}} </text>
+        </view>
+      </view>
+      <view class='store_list_distance' wx:if="{{list.distance>1}}">{{list.distance}}km</view>
+      <view class='store_list_distance' wx:if="{{0.5<list.distance<1}}">{{list.distance*1000}}m</view>
+      <view class='store_list_distance' wx:if="{{list.distance<0.5}}">{{distance}}</view>
+    </view>
+  </block>
+</view>
+<template is="loading" data="{{Loading}}" />
+
+
+<view class="canvas-box">
+  <canvas style="width: 750rpx;height: 750rpx;background:#f1f1f1;"
+          canvas-id="mycanvas"/>
+</view>

@@ -1,0 +1,45 @@
+	<import src="../../templete/info/info.wxml" />
+  <view class='order_nav' >
+  <block wx:for="{{Menus}}" wx:for-item="menu" wx:key="index">
+      <view class='order_nav_list {{NavId==index?"active":""}}' data-id="{{index}}" style='width:{{systemInfo.Width/5}}px'
+          bindtap='changeNav'>{{menu}}</view>
+      </block>
+  </view>
+  
+  <swiper current="{{NavId}}" style="height:{{systemInfo.Height}}px" bindchange="switchTab" class='swiper' wx:if="{{!Loading}}">
+    <swiper-item wx:for="{{[0,1,2,3,4]}}" wx:key="index">
+      <scroll-view scroll-y style="height:{{systemInfo.Height}}px"  bindscrolltolower="orderScroll" lower-threshold="100" bindscrolltoupper="topScroll">
+        <view class="order">
+          <block wx:for="{{orderData}}"  wx:for-item="list" wx:key="index">
+            <view  class="monad" bindtap="{{list.serverType!=='洗车'?'lookOrderList':''}}" data-id="{{list.orderId}}">
+              <view class='order_name'>{{list.serverType}}</view>
+              <view class='order_store'>
+                <image src='/images/store/store.png' />
+                {{list.facilitatorName}}
+              </view>
+              <view class='order_time'>
+                <image src='/images/store/time.png' />
+                {{list.appointmentTime}}
+              </view>
+              <view class='order_address' catchtap='showMap' 
+                    data-id="{{list.orderId}}">
+                <image src='/images/addition/position.png'/>
+                {{list.facilitatorAddress}}
+              </view>
+              <view class='order_toast'>订单已确认，请自行安排时间。</view>
+              <button class='order_status {{list.orderStatus=="待接单"?"will":list.orderStatus=="待服务"?"willdo":list.orderStatus=="服务中"?"doing":"done"}}'>{{list.orderStatus}}</button>
+            </view>
+          </block>
+        </view>
+      </scroll-view>
+    </swiper-item>
+  </swiper>
+
+
+<import src="../../templete/loading/loading.wxml"/>
+<template is="loading" data="{{Loading}}"/>
+ <view class='order_null' wx:if="{{orderData.length==0&&!Loading}}">
+   暂无订单
+</view> 
+
+<template is="info" data="{{showModal}}"/>

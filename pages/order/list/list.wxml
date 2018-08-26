@@ -1,0 +1,41 @@
+<view class='header'>
+      <text class='header_list_title' >订单信息</text>
+      <text class='header_list_detail'>{{orderInfo.orderNo}}</text>
+      <button class='header_list_status {{orderInfo.orderStatus=="待接单"?"will":orderInfo.orderStatus=="待服务"?"willdo":orderInfo.orderStatus=="服务中"?"doing":"done"}}'>{{orderInfo.orderStatus}}</button>
+</view>
+<view class='info'>
+  <view class='info_name'>
+    <text class='line'></text>
+    <text>预约信息</text>
+  </view>
+  <view class='info_list' style='margin-top:23rpx;margin-bottom:20rpx;'
+        wx:if="{{orderInfo.serverType==='年检服务'}}">
+    <image src='/images/store/position.png'/>
+    <text class='address'>{{orderInfo.address}}</text>
+  </view>
+  <block wx:for="{{orderDetail}}" wx:key="{{info.id}}" wx:for-item="info">
+    <view class='info_list'>
+      <text class='info_list_title'>{{info.name}}</text>
+      <text class='info_list_detail {{info.id===6?"active":""}}' wx:if="{{info.id!=3}}">{{info.detail}}</text>
+       <view class='info_list_detail' wx:if="{{info.id==3}}">
+         <block wx:for="{{info.detail}}" wx:for-item="txt" wx:key="{{index}}">
+         <text>{{txt.cardName}}  </text>
+         </block>
+       </view>
+    </view>
+  </block>
+  <view class='info_name'><text class='line'></text>商家信息</view>
+    <view class='info_list'>
+      <text class='info_store_name'>{{orderInfo.facilitatorName}}</text>
+      <text class='info_store_coatent' 
+            data-id="{{orderInfo.facilitatorPhone}}" 
+            bindtap='concatStore'>联系商家</text>
+    </view>
+    <view class='info_list'>
+      <image src='/images/store/position.png'/><text
+             class='info_store_address' bindtap='showMap'>{{orderInfo.facilitatorAddress}}</text>
+    </view>
+</view>
+
+<import src="../../../templete/loading/loading.wxml"/>
+<template is="loading" data="{{Loading}}"/>

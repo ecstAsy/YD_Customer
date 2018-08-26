@@ -1,0 +1,53 @@
+.storeDetail{
+  width: 100%;
+}
+.store_header{
+  width: 100%;
+}
+.swiper,.swiperItem,.swiperImg{
+  width: 100%;
+  height: 100%;
+}
+.store_content{
+  width: 94%;
+  margin: 15rpx auto 0;
+}
+.store_title{
+  display: block;
+  width: 100%;
+  font-size: 32rpx;
+  text-align: center;
+  padding: 25rpx 0 20rpx;
+  font-family: "PingFang-SC-Bold";
+  color: #333;
+  font-weight: 600;
+}
+.store_title text{
+  font-size: 28rpx;
+}
+.store_intro{
+  display: block;
+  font-size: 28rpx;
+  text-indent: 40rpx;
+  color: #939ba4;
+}
+.store_about{
+  width: 94%;
+  margin: 0 auto;
+  margin-top: 42rpx;
+}
+
+
+.store_about_list{
+  width: 100%;
+}
+.store_about_list_icon{
+  width: 40rpx;
+  height: 40rpx;
+  vertical-align: middle;
+  margin: 0 12rpx;
+}
+.store_about_list text{
+  font-size: 28rpx;
+  color: #333;
+}

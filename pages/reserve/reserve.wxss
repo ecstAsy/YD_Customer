@@ -1,0 +1,69 @@
+@import "../../templete/loading/loading.wxss";
+@import "../../templete/info/info.wxss";
+
+page {
+  border-top: 1rpx solid #e2e4e8;
+  background: #f5f5f5;
+}
+
+.reserve {
+  width: 100%;
+  padding-top: 9%;
+}
+
+.reserve_list {
+  width: 74%;
+  margin: 0 auto;
+  border-radius: 10rpx;
+  margin-bottom: 6%;
+  text-align: center;
+  color: #fff;
+}
+
+.reserve_list:first-of-type {
+  background: linear-gradient(to right, #ffaa57 0, #ff8446 100%);
+  box-shadow: 0rpx 14rpx 18rpx rgba(255, 170, 87, 0.37);
+}
+
+.reserve_list:nth-of-type(2),
+.reserve_list:last-of-type {
+  background: linear-gradient(to right, #60bcfd 0, #3a70fa 100%);
+  box-shadow: 0rpx 14rpx 18rpx rgba(96, 188, 253, 0.37);
+}
+
+.reserve_list:nth-of-type(3){
+  background: linear-gradient(to right, #FD6F9E 0, #FD4C79 100%);
+  box-shadow: 0rpx 14rpx 18rpx rgba(253,111,158,0.37);
+}
+
+.reserve_list_icon, .reserve_list_title {
+  display: inline-block;
+  margin: 0 30rpx;
+}
+
+.reserve_list_icon {
+  border-radius: 50%;
+  vertical-align: middle;
+}
+
+.reserve_list_icon image {
+  width: 100%;
+  height: 100%;
+}
+
+.reserve_list_title {
+  font-size: 34rpx;
+  color: #fff;
+  font-family: "PingFang-SC-Bold";
+}
+
+.phoneToast {
+  width: 100%;
+  text-align: center;
+  position: fixed;
+  font-size: 26rpx;
+  font-family: PingFangSC-Regular;
+  color: rgba(189, 199, 210, 1);
+  z-index: 999;
+  bottom: 18rpx;
+}

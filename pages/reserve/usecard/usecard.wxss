@@ -1,0 +1,50 @@
+@import "../../../templete/card/card.wxss";
+
+page {
+  background: #f5f5f5;
+}
+
+.usecard {
+  width: 100%;
+  padding-bottom: 80rpx;
+}
+
+.saveInfo{
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  height: 90rpx;
+  background: #f8f8f8;
+  left: 0;
+  border-top: 1px solid #e2e4e8;
+}
+
+.saveInfo_toast,.saveInfo_btn{
+  display: inline-block;
+  height: 100%;
+  vertical-align: top;
+}
+.saveInfo_toast{
+  width: 70%;
+  height: 90rpx;
+  line-height: 90rpx;
+  text-align: center;
+  font-size: 24rpx;
+  color: #939ba4;
+}
+.saveInfo_toast text{
+  color: #333;
+}
+
+.saveInfo_btn{
+  width: 30%;
+  border: none;
+  border-radius: 0rpx;
+  background: #FC9118;
+  color: #f0f5fa;
+  line-height: 90rpx;
+}
+.saveInfo_btn::after{
+  border: none;
+  border-radius: 0rpx;
+}

@@ -1,0 +1,12 @@
+<import src="../../../templete/card/card.wxml" />
+<view class="usecard">
+  <block wx:for="{{cardLists}}" wx:for-item="card" wx:key="index">
+    <template is="card" data="{{card,code:2}}" />
+  </block>
+</view>
+<view class='saveInfo'>
+  <view class='saveInfo_toast'>
+    已选择  <text>{{selCard.length}}</text> 张卡券
+  </view>
+  <button class='saveInfo_btn' bindtap='confimCard'>提交</button>
+</view>

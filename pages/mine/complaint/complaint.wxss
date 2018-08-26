@@ -1,0 +1,52 @@
+@import "../../../templete/loading/loading.wxss";
+page {
+  background: #f5f5f5;
+  font-family:PingFangSC-Regular;
+}
+
+.input_box{
+  margin-bottom: 112rpx;
+  position: relative;
+}
+
+textarea{
+  width: 92%;
+  background: #fff;
+  padding: 0 4% 55rpx;
+}
+
+.textarea_input{
+  font-size: 28rpx;
+  color: #BDC7D2;
+}
+
+.input_toast{
+  position: absolute;
+  right: 4%;
+  bottom: 17rpx;
+  font-size: 22rpx;
+  color: #BDC7D2;
+}
+
+.complaintInfo_btn{
+  width: 92%;
+  height: 80rpx;
+  border-radius: 36rpx;
+  border: none;
+  outline: medium;
+  color: #fff;
+  font-size: 28rpx;
+  line-height: 80rpx;
+  background: linear-gradient(to right, #ff8b00 0, #f6be1a 100%);
+  box-shadow: 0rpx 10rpx 12rpx rgba(255, 170, 87, 0.35);
+}
+
+.complaintInfo_btn::after{
+  border-radius: 36rpx;
+  border: none;
+  outline: medium;
+}
+
+.complaintInfo_btn.active{
+  opacity: 0.2;
+}

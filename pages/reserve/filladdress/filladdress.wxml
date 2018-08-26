@@ -1,0 +1,30 @@
+<form bindsubmit="formSubmit" bindreset="formReset">
+  <view class='addressInfo'>
+    <view class='addressInfo_list'>
+      <view class='addressInfo_list_title'>
+        <text class='addition_info_list_title'>地址<text>*</text></text>
+      </view>
+      <view class='addressInfo_list_detail'>
+        <view class='address_info' bindtap='chooseLocation'>
+          <image class="icon_position" wx:if="{{!Position.address}}"
+                 src='/images/store/position.png'/>
+          <text class='toast' wx:if="{{!Position.address}}">点击选择</text>
+          <text class='info'>{{Position.address}}</text>
+          <image class="icon_right" src='/images/addition/right.png' wx:if="{{!Position.address}}"/>
+        </view>
+      </view>
+    </view>
+    <view class='addressInfo_list'>
+      <view class='addressInfo_list_title'>
+        <text class='addition_info_list_title'>详细地址<text>*</text></text>
+      </view>
+      <view class='addressInfo_list_detail'>
+        <input placeholder='例：12幢1508室' bindinput='addressInput' placeholder-class='info_input'/>
+      </view>
+    </view>
+  </view>
+  <button class='addressInfo_btn {{txtNum===500?"active":""}}'
+          formType="submit">保存</button>
+</form>
+
+

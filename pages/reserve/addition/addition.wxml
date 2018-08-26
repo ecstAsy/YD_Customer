@@ -1,0 +1,123 @@
+<import src="../../../templete/reserveModal/modal.wxml" />
+<template is="Modal" data="{{showModal,useCarTime}}"/>
+
+<view class='store_header'>
+   <view class='store_logo'>
+     <image wx:if="{{store.logoImg}}" src='{{store.logoImg}}'/>
+     <view wx:if="{{!store.logoImg}}">未上传图片</view>
+   </view>
+   <view class='store_info'>
+      <view class='store_info_name'>{{store.name}}</view>
+      <view class='store_info_toast'>维修 · 服务站</view>
+      <view class='store_info_address' bindtap='showMap'>
+        <image src='/images/store/position.png'/>{{store.address}}
+      </view>
+      <view class='store_info_click'> 
+        <text bindtap='lookStore'>店铺详情</text>
+        <text bindtap='callWorker'>电话咨询</text>
+      </view>
+   </view>
+</view>
+<form bindsubmit="formSubmit" bindreset="formReset">
+<view class='addition_info'>
+  
+  
+    <view class='addition_info_title'>
+      <text class='addition_info_title_line'></text>
+      <text class='addition_info_title_txt'>预约信息</text>
+    </view>
+    <view class='addition_info_list_nianjian' style='border:none' 
+          wx:if="{{serveType==='年检'}}" bindtap='selectAddress'>
+      <text wx:if="{{!Position}}" class='addition_info_list_title_nianjian'>地址<text>*</text></text>  
+      <view wx:if="{{Position}}" class='addition_info_list_addresinfo'>
+        <image class="add_icon" src='/images/store/position.png'/>
+        {{Position.address+Position.detail}}
+      </view>
+      <image wx:else  class="add_icon icon_right" src='/images/addition/right.png'/>
+    </view>
+    <view class='address' wx:if="{{serveType==='年检'}}"></view>
+    <view class='addition_info_list' wx:if="{{serveType==='钣喷'}}">
+      <text class='addition_info_list_title'>漆面个数<text>*</text></text>
+      <input placeholder='请输入' placeholder-class='inputClass'  
+             type="number" name="lacquerNum" bindinput='subNum'/>
+    </view>
+    <view class='addition_info_list' wx:if="{{serveType==='年检'}}">
+      <text class='addition_info_list_title'>车辆初登日期<text>*</text></text>
+      <view  class='addition_list_card'  
+             style="width:{{systemInfo.Width*0.5}}px">
+
+         <picker mode="date" value="{{VehicleInitialDate}}" 
+                 data-id='cartime' start="2000-01-01"
+                  end="{{nowTime}}" bindchange="bindDateChange"
+                  name='registor'>
+          <view class="value" name="endtime">{{VehicleInitialDate}}
+          <text wx:if="{{!VehicleInitialDate}}"
+                class='VehicleInitialDate_placeholder'>请选择</text>
+            <image  class="add_icon" src='/images/addition/right.png' />
+          </view>
+        </picker>
+      </view>
+    </view>
+    <view class='addition_info_list'>
+      <text class='addition_info_list_title'>预约日期<text>*</text></text>
+      <view  class='addition_list_card'  
+             style="width:{{systemInfo.Width*0.5}}px">
+         <picker mode="date" value="{{selectedDate}}" 
+                start="{{nowTime}}" end="2020-09-01" 
+                bindchange="bindDateChange" data-id='reservetime'
+                name="reserve">
+          <view class="value">{{selectedDate}}
+            <image  class="add_icon" src='/images/addition/right.png' />
+          </view>
+        </picker>
+      </view>
+    </view>
+    <view class='addition_info_list'>
+      <text class='addition_info_list_title'>卡券选择<text>*</text></text>
+      <view  class='addition_list_card' bindtap='selectCard' 
+             style="width:{{systemInfo.Width*0.5}}px">
+        <text>{{cardToast}}</text>
+        <image  class="add_icon" src='/images/addition/right.png' />
+      </view>
+    </view>
+    <!-- <view class='addition_info_list' wx:if="{{serveType==='年检'}}">
+      <text class='addition_info_list_title'>使用年检卡<text>*</text></text>
+      <view  class='addition_list_card body-view' 
+             style="width:{{systemInfo.Width*0.5}}px">
+        <switch color='#FF8B00' bindchange="switchChange" checked="{{cardList.length>0||swatch}}"/>
+      </view>
+    </view> -->
+    <view class='addition_info_list'>
+      <text class='addition_info_list_title'>车牌号<text>*</text></text>
+      <input type="text" name ="carPlate" placeholder='请输入' 
+             maxlength="7" bindfocus="carNumberInput"
+             placeholder-class='inputClass' bindblur='inputCarNum'
+              value='{{carNumber}}'/>
+    </view>
+    <view class='addition_info_list'>
+      <text class='addition_info_list_title'>姓名<text>*</text></text>
+      <input placeholder='请输入' placeholder-class='inputClass'
+             type="text" name ="name"/>
+    </view>
+    <view class='addition_info_list'>
+      <text class='addition_info_list_title'>手机号<text>*</text></text>
+      <input placeholder='请输入' type="number"
+             placeholder-class='inputClass'
+             name="phone" maxlength="11" value='{{Phone}}'
+             bindblur='inputPhoneNum'/>
+    </view>
+    <view class='addition_info_list'>
+      <text class='addition_info_list_title' type="text">备注</text>
+      <input placeholder='请输入' placeholder-class='inputClass'
+             name='remark'/>
+    </view>
+     <view class='saveInfo' wx:if="{{serveType!=='年检'}}">
+      <view class='saveInfo_toast'>
+          <text> {{subNum}} </text>个漆面 , 已选择<text> {{selCards.length}}</text> 张卡券
+      </view>
+      <button class='saveInfo_btn' formType="submit">提交</button>
+    </view> 
+</view>
+ <button wx:if="{{serveType==='年检'}}" 
+            class='reserveInfo_btn' formType="submit">预约</button>
+  </form>

@@ -1,0 +1,27 @@
+<template name="addCardModal">
+  <view class='draw'>
+    <form bindsubmit="formSubmit" bindreset="formReset">
+      <image class='draw_icon' data-id='card' bindtap='closeModal' src='/images/card/close.png' />
+      <view class='draw_title'>添加卡券</view>
+      <view class='draw_list'>
+        <text class='draw_list_title'>卡号：</text>
+        <view class='input-box'>
+        <input name="cardnum" data-id="cardnum" type='text' 
+               placeholder-class placeholder='请输入卡号'
+               bindinput='Input' />
+        </view>
+        
+      </view>
+      <view class='draw_list'>
+        <text class='draw_list_title'>密码：</text>
+        <view class='input-box'>
+        <input name="password" data-id="password" password 
+               type="number" placeholder='请输入密码' 
+               placeholder-class bindinput='Input'/>
+        </view>
+        
+      </view>
+      <button class='card_btn_confim {{!cardTest.cardNum||!cardTest.password?"active":""}}' formType="submit">提交</button>
+    </form>
+  </view>
+</template>

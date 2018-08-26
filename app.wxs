@@ -1,0 +1,6 @@
+var _handleTime = function(time){
+  return time.substring(0, 4) + "." + time.substring(4, 6) + "." + time.substring(6, 8)
+}
+module.exports = {
+  _handleTime: _handleTime
+}
