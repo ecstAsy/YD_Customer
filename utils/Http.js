@@ -1,5 +1,5 @@
-const API_URL = "https://www.caryoud.com/youdianyangche/"
-//const API_URL = "http://localhost:8088/"
+// const API_URL = "https://www.caryoud.com/youdianyangche/"
+const API_URL = "http://localhost:8088/"
 //const API_URL = "http://192.168.1.115:8080/"
 function Get(url, params, jwtStr) {
   let promise = new Promise(function (resolve, reject) {

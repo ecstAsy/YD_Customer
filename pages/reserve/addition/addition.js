@@ -1,5 +1,7 @@
 import PublicFun from "../../../utils/PublicFun.js";
 import Http from "../../../utils/Http.js";
+import util from "../../../utils/util.js";
+
 const App = getApp(),
   myDate = new Date();
 const _CarInfo = (carInfo) => {
@@ -59,7 +61,7 @@ Page({
       store: Store,
       serveType: options.serveType,
       carNumber: _CarInfo(App.globalData.carInfo).carPlate,
-      VehicleInitialDate: _CarInfo(App.globalData.carInfo).firstRegisterDate,
+      VehicleInitialDate: util.formatTime_1(_CarInfo(App.globalData.carInfo).firstRegisterDate),
       Phone: App.globalData.phone || ''
     })
     wx.setNavigationBarTitle({
@@ -118,7 +120,7 @@ Page({
     let that = this,
       // 预约日期
       selectedDate = that.data.selectedDate,
-      // 初等日期
+      // 初登日期
       VehicleInitialDate = that.data.VehicleInitialDate,
       // 门店信息
       store = that.data.store,
