@@ -99,6 +99,9 @@ page{
 
 .address{
   display: inline-block;
+  margin-left: 25rpx;
+  width:85%;
+  vertical-align:top;
 }
 
 .info_list_title{
